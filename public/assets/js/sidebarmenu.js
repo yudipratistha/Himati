@@ -1,6 +1,6 @@
 /*
-Template Name: Admin Pro Admin
-Author: Wrappixel
+Template Name: Material Pro Admin
+Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: js
 */
@@ -14,7 +14,7 @@ File: js
       exports: {}
     };
     factory(global.jquery);
-    global.AdminMenu = mod.exports;
+    global.metisMenu = mod.exports;
   }
 })(this, function (_jquery) {
   'use strict';
@@ -123,10 +123,10 @@ File: js
     return Util;
   }(jQuery);
 
-  var AdminMenu = function ($) {
+  var MetisMenu = function ($) {
 
-    var NAME = 'AdminMenu';
-    var DATA_KEY = 'AdminMenu';
+    var NAME = 'metisMenu';
+    var DATA_KEY = 'metisMenu';
     var EVENT_KEY = '.' + DATA_KEY;
     var DATA_API_KEY = '.data-api';
     var JQUERY_NO_CONFLICT = $.fn[NAME];
@@ -152,9 +152,9 @@ File: js
       CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY
     };
 
-    var AdminMenu = function () {
-      function AdminMenu(element, config) {
-        _classCallCheck(this, AdminMenu);
+    var MetisMenu = function () {
+      function MetisMenu(element, config) {
+        _classCallCheck(this, MetisMenu);
 
         this._element = element;
         this._config = this._getConfig(config);
@@ -163,7 +163,7 @@ File: js
         this.init();
       }
 
-      AdminMenu.prototype.init = function init() {
+      MetisMenu.prototype.init = function init() {
         var self = this;
         $(this._element).find(this._config.parentTrigger + '.' + this._config.activeClass).has(this._config.subMenu).children(this._config.subMenu).attr('aria-expanded', true).addClass(this._config.collapseClass + ' ' + this._config.collapseInClass);
 
@@ -197,7 +197,7 @@ File: js
         });
       };
 
-      AdminMenu.prototype._show = function _show(element) {
+      MetisMenu.prototype._show = function _show(element) {
         if (this._transitioning || $(element).hasClass(this._config.collapsingClass)) {
           return;
         }
@@ -238,7 +238,7 @@ File: js
         _el.height(_el[0].scrollHeight).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
       };
 
-      AdminMenu.prototype._hide = function _hide(element) {
+      MetisMenu.prototype._hide = function _hide(element) {
 
         if (this._transitioning || !$(element).hasClass(this._config.collapseInClass)) {
           return;
@@ -279,11 +279,11 @@ File: js
         _el.height() == 0 || _el.css('display') == 'none' ? complete() : _el.height(0).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
       };
 
-      AdminMenu.prototype.setTransitioning = function setTransitioning(isTransitioning) {
+      MetisMenu.prototype.setTransitioning = function setTransitioning(isTransitioning) {
         this._transitioning = isTransitioning;
       };
 
-      AdminMenu.prototype.dispose = function dispose() {
+      MetisMenu.prototype.dispose = function dispose() {
         $.removeData(this._element, DATA_KEY);
 
         $(this._element).find(this._config.parentTrigger).has(this._config.subMenu).children(this._config.triggerElement).off('click');
@@ -293,12 +293,12 @@ File: js
         this._element = null;
       };
 
-      AdminMenu.prototype._getConfig = function _getConfig(config) {
+      MetisMenu.prototype._getConfig = function _getConfig(config) {
         config = $.extend({}, Default, config);
         return config;
       };
 
-      AdminMenu._jQueryInterface = function _jQueryInterface(config) {
+      MetisMenu._jQueryInterface = function _jQueryInterface(config) {
         return this.each(function () {
           var $this = $(this);
           var data = $this.data(DATA_KEY);
@@ -309,7 +309,7 @@ File: js
           }
 
           if (!data) {
-            data = new AdminMenu(this, _config);
+            data = new MetisMenu(this, _config);
             $this.data(DATA_KEY, data);
           }
 
@@ -322,7 +322,7 @@ File: js
         });
       };
 
-      return AdminMenu;
+      return MetisMenu;
     }();
 
     /**
@@ -331,12 +331,12 @@ File: js
      * ------------------------------------------------------------------------
      */
 
-    $.fn[NAME] = AdminMenu._jQueryInterface;
-    $.fn[NAME].Constructor = AdminMenu;
+    $.fn[NAME] = MetisMenu._jQueryInterface;
+    $.fn[NAME].Constructor = MetisMenu;
     $.fn[NAME].noConflict = function () {
       $.fn[NAME] = JQUERY_NO_CONFLICT;
-      return AdminMenu._jQueryInterface;
+      return MetisMenu._jQueryInterface;
     };
-    return AdminMenu;
+    return MetisMenu;
   }(jQuery);
 });

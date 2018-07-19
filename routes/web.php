@@ -73,7 +73,7 @@ Route::group(['prefix' => 'admin'], function () {
   })->middleware('auth:admin');
   */
 
-  Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
+  Route::resource('slideshow','SlideshowController')->middleware('auth:admin');
   Route::resource('barang','BarangController')->middleware('auth:admin');
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
   Route::resource('newsfeed','NewsfeedController')->middleware('auth:admin');
