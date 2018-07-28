@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Barang;
+use App\Galeri;
 use Illuminate\Http\Request;
 use Storage;
 
-class BarangController extends Controller
+class GaleriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::all();
+        $galeri = Galeri::all();
 
-        return view('admin.barang.index',compact('barang'));
+        return view('admin.galeri.index',compact('galeri'));
     }
 
     /**

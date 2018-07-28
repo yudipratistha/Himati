@@ -26,22 +26,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        @foreach($sies as $number => $sie)
+                                        @foreach($kategori_galeris as $number => $kategori_galeri)
                                         <tr>
                                             <td>{{ $number+1 }}</td>
-                                            <td>{{ $sie->nama_sie }}</td>
+                                            <td>{{ $kategori_galeri->nama_kategori }}</td>
                                             <td>
                                                 <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Sie" >
-                                                    <a href="{{ route('master-sie.edit', $sie ) }}" class=" btn btn-circle btn-secondary" >
+                                                    <a href="{{ route('master-kategori-galeri.edit', $kategori_galeri ) }}" class=" btn btn-circle btn-secondary" >
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
                                                 </div>
 
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Sie">
-                                                <form id="formHapus{{$sie->id}}"  action="{{ route('master-sie.destroy', $sie->id ) }}"  method="POST" >
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus kategori_galeri">
+                                                <form id="formHapus{{$kategori_galeri->id}}"  action="{{ route('master-kategori-galeri.destroy', $kategori_galeri->id ) }}"  method="POST" >
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <button data-id="{{$sie->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
+                                                        <button data-id="{{$kategori_galeri->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
                                                             <span class="fa fa-trash-o">
                                                         </button>
                                                     </form>
@@ -72,7 +72,7 @@
                             <h6 class="subtitle m-t-20 text-center">
                                 Masukkan Daftar Nama Sie.
                             </h6>
-                            <form class="form-material m-t-40" method="POST" action="{{ route('master-sie.store') }}" enctype="multipart/form-data">
+                            <form class="form-material m-t-40" method="POST" action="{{ route('master-kategori-galeri.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">

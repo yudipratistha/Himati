@@ -74,11 +74,11 @@ Route::group(['prefix' => 'admin'], function () {
   */
 
   Route::resource('slideshow','SlideshowController')->middleware('auth:admin');
-  Route::resource('barang','BarangController')->middleware('auth:admin');
+  Route::resource('galeri','GaleriController')->middleware('auth:admin');
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
   Route::resource('newsfeed','NewsfeedController')->middleware('auth:admin');
   Route::resource('guests','GuestController')->middleware('auth:admin');
-  Route::resource('master-sie','SieController')->middleware('auth:admin');
+  Route::resource('master-kategori-galeri','Kategori_GaleriController')->middleware('auth:admin');
   Route::resource('oprec','OprecController')->middleware('auth:admin');
 
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');

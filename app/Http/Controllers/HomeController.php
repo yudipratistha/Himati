@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kegiatan;
+use App\Slideshow;
 use App\Fungsionaris;
 use App\Jabatan;
 use App\Period;
@@ -18,8 +18,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        return view('index');
+        $slideshow = Slideshow::latest()->get()->take(3);
+        return view('index', compact('slideshow'));
     }
 
     public function show($id)

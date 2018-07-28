@@ -143,11 +143,11 @@ class SlideshowController extends Controller
      */
     public function destroy(Request $request,$id)
     {
-        // $activ = Slideshow::find($id);
+        $activ = Slideshow::find($id);
         // File::delete("assets/images/aw_07-17-2018.jpg");
-        Storage::delete('slideshow/aaaa_07-18-2018.jpg');
+        Storage::delete('slideshow/'. $activ->media_slideshow);
         // Storage::delete(public_path('aaaa_07-18-2018.jpg'));
-        // $activ->delete();
+        $activ->delete();
         // return redirect($activ);
 
         session()->flash('delete', 'Sukses Menghapus Data Slideshow');
